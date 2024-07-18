@@ -1,0 +1,156 @@
+/* style.css */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: #1b0658;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.container {
+    text-align: center;
+    position: relative;
+    animation: fadeIn 2s ease-in-out;
+}
+
+.weather-app {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+    max-width: 400px;
+    width: 100%;
+    position: relative;
+    animation: scaleUp 0.5s ease-in-out;
+}
+
+.weather-app:before {
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+    border: 2px solid rgba(255, 255, 255, 0.6);
+    border-radius: 15px;
+    filter: blur(15px);
+    z-index: -1;
+    animation: glow 1.5s infinite alternate;
+}
+
+.weather-app h1 {
+    margin: 0 0 20px;
+    color: #fff;
+    animation: fadeInDown 1s ease-in-out;
+}
+
+.search input {
+    padding: 15px;
+    border-radius: 10px;
+    border: none;
+    width: calc(100% - 120px);
+    margin-right: 10px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+.search button {
+    padding: 15px;
+    border-radius: 10px;
+    border: none;
+    background: #480606;
+    color: #f3f3f3;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.search input:focus,
+.search button:hover {
+    transform: scale(1.05);
+}
+
+.weather-info {
+    margin-top: 30px;
+    color: #fff;
+    animation: fadeInUp 1s ease-in-out;
+}
+
+.weather-info h2,
+.weather-info h3,
+.weather-info p {
+    margin: 10px 0;
+}
+
+#weather-icon {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto;
+    background-size: contain;
+    animation: rotate 2s infinite linear;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes scaleUp {
+    from {
+        transform: scale(0.8);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+
+@keyframes glow {
+    from {
+        box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+    }
+    to {
+        box-shadow: 0 0 20px rgba(255, 255, 255, 0.7);
+    }
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
